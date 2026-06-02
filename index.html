@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>沖繩親子自駕 5天4夜 ・ 2026/6/8–6/12</title>
+<style>
+  :root{
+    --teal:#0e7490; --cyan:#06b6d4; --ink:#0f172a; --slate:#475569;
+    --bg:#eef7fb; --card:#ffffff; --line:#e2e8f0;
+    --d1:#f59e0b; --d2:#10b981; --d3:#3b82f6; --d4:#8b5cf6; --d5:#64748b;
+    --warn:#dc2626; --warnbg:#fef2f2;
+    --shadow:0 4px 18px rgba(14,116,144,.12);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"PingFang TC","Hiragino Sans GB","Microsoft JhengHei",system-ui,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.7;-webkit-text-size-adjust:100%}
+  a{color:inherit}
+  .wrap{max-width:780px;margin:0 auto;padding:0 16px}
+
+  /* HERO */
+  .hero{position:relative;height:78vh;min-height:480px;max-height:760px;overflow:hidden}
+  .hero img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,90,110,.15) 0%,rgba(6,90,110,.05) 40%,rgba(8,47,73,.78) 100%)}
+  .hero .htext{position:absolute;left:0;right:0;bottom:0;padding:0 22px 34px;color:#fff}
+  .hero h1{font-size:clamp(30px,7vw,46px);font-weight:800;letter-spacing:1px;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+  .hero .sub{font-size:clamp(15px,3.6vw,20px);margin-top:8px;color:#e8f7fc;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+  .hero .pills{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+  .hero .pill{background:rgba(255,255,255,.2);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.35);
+    padding:5px 12px;border-radius:30px;font-size:13px;color:#fff}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(14,116,144,.06)}
+  nav .navin{max-width:780px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:10px 12px;scrollbar-width:none}
+  nav .navin::-webkit-scrollbar{display:none}
+  nav a{flex:0 0 auto;font-size:14px;font-weight:600;color:var(--slate);text-decoration:none;
+    padding:6px 12px;border-radius:30px;white-space:nowrap;transition:.2s}
+  nav a:hover{background:var(--bg);color:var(--teal)}
+
+  section{padding:34px 0 6px}
+  .sechead{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+  .sechead .bar{width:6px;height:30px;border-radius:4px;background:var(--cyan)}
+  .sechead h2{font-size:25px;font-weight:800}
+  .lead{color:var(--slate);margin:-8px 0 18px;font-size:15px}
+
+  /* INFO GRID */
+  .info{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .info .box{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px}
+  .info .box .k{font-size:13px;color:var(--teal);font-weight:700;letter-spacing:.5px}
+  .info .box .v{font-size:15px;margin-top:4px}
+  @media(max-width:520px){.info{grid-template-columns:1fr}}
+
+  /* DAY CARD */
+  .day{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:20px}
+  .day .banner{width:100%;aspect-ratio:16/6;object-fit:cover;display:block;border-bottom:3px solid var(--c)}
+  .day .top{padding:18px 20px 14px;border-left:8px solid var(--c)}
+  .day .tag{display:inline-block;font-size:13px;font-weight:800;color:#fff;background:var(--c);
+    padding:3px 12px;border-radius:30px;letter-spacing:1px}
+  .day .top h3{font-size:21px;font-weight:800;margin-top:8px}
+  .day .meta{margin-top:8px;font-size:13.5px;color:var(--slate);display:flex;flex-wrap:wrap;gap:6px 14px}
+  .day .meta b{color:var(--c)}
+
+  .stop{padding:14px 20px;border-top:1px solid var(--line)}
+  .stop .h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .stop .time{font-size:13px;font-weight:800;color:var(--c);min-width:48px}
+  .stop .name{font-size:17px;font-weight:700}
+  .stop .desc{font-size:14px;color:var(--slate);margin:6px 0 0 0}
+  .tags{display:flex;flex-direction:column;gap:5px;margin-top:9px}
+  .row{display:flex;gap:8px;font-size:14px;align-items:flex-start}
+  .row .lab{flex:0 0 auto;font-size:11.5px;font-weight:800;padding:2px 8px;border-radius:6px;margin-top:3px;color:#fff}
+  .lab.see{background:#0ea5e9}.lab.eat{background:#ef4444}.lab.buy{background:#f59e0b}.lab.tip{background:#10b981}
+  .row .txt{color:var(--ink)}
+  .move{font-size:12.5px;color:#94a3b8;padding:8px 20px;border-top:1px dashed var(--line)}
+  .maplink{display:inline-flex;align-items:center;gap:6px;margin:12px 20px 18px;font-size:14px;font-weight:700;
+    color:var(--teal);text-decoration:none;background:var(--bg);padding:9px 16px;border-radius:30px}
+  a.pin{display:inline-block;margin-left:7px;font-size:12px;font-weight:700;text-decoration:none;color:var(--teal);
+    background:var(--bg);border:1px solid var(--line);padding:2px 9px;border-radius:30px;white-space:nowrap;vertical-align:middle}
+  a.pin:hover{background:#dff1f7}
+  .spots{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+  .spot{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--bg);
+    border:1px solid var(--line);border-radius:12px;padding:9px 12px}
+  .spot .si{font-size:14px}.spot .si b{font-weight:700}
+  .spot .si .d{color:var(--slate);font-size:12.5px}
+  .spot a.go{flex:0 0 auto;font-size:12px;font-weight:700;text-decoration:none;color:#fff;background:var(--teal);
+    padding:5px 11px;border-radius:30px;white-space:nowrap}
+  .subhd{font-size:14px;font-weight:800;color:var(--c);margin:14px 0 2px;padding:0 0 0 2px}
+
+  .note{background:var(--warnbg);border:1px solid #fecaca;border-radius:12px;padding:10px 14px;margin:10px 20px;
+    font-size:13.5px;color:var(--warn);font-weight:600}
+
+  /* CHIP LISTS */
+  .cat{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px;margin-bottom:14px}
+  .cat h4{font-size:16px;font-weight:800;color:var(--teal);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chips span{background:var(--bg);border:1px solid var(--line);padding:5px 11px;border-radius:30px;font-size:13.5px}
+
+  /* WARN SECTION */
+  .warns{display:flex;flex-direction:column;gap:12px}
+  .wcard{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px;border-left:5px solid var(--teal)}
+  .wcard.red{border-left-color:var(--warn)}
+  .wcard h4{font-size:16px;font-weight:800;margin-bottom:6px}
+  .wcard ul{margin:0;padding-left:18px}
+  .wcard li{font-size:14px;margin:4px 0;color:var(--slate)}
+  .wcard li b{color:var(--ink)}
+
+  footer{text-align:center;color:#94a3b8;font-size:12.5px;padding:30px 16px 50px;line-height:1.8}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:.6s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <img src="./cover.jpg" alt="沖繩海岸自駕">
+  <div class="overlay"></div>
+  <div class="htext">
+    <h1>沖繩親子自駕 ・ 5天4夜</h1>
+    <div class="sub">2026 / 6 / 8（一）～ 6 / 12（五）</div>
+    <div class="pills">
+      <span class="pill">4 大人（含孕婦）</span>
+      <span class="pill">2 小孩 ・ 3 & 6 歲</span>
+      <span class="pill">自駕 ・ OTS</span>
+      <span class="pill">度假＋購物 ・ 不趕路</span>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav><div class="navin">
+  <a href="#info">總覽</a>
+  <a href="#d1">Day1</a>
+  <a href="#d2">Day2</a>
+  <a href="#d3">Day3</a>
+  <a href="#d4">Day4</a>
+  <a href="#d5">Day5</a>
+  <a href="#buy">必買</a>
+  <a href="#tips">注意事項</a>
+</div></nav>
+
+<div class="wrap">
+
+<!-- INFO -->
+<section id="info">
+  <div class="sechead"><div class="bar"></div><h2>行程總覽</h2></div>
+  <div class="info">
+    <div class="box"><div class="k">✈ 航班</div><div class="v">去 6/8 桃園 10:05→那霸 12:40<br>回 6/12 那霸 08:30 起飛</div></div>
+    <div class="box"><div class="k">🚗 租車</div><div class="v">OTS 宇栄原營業所<br>取車＋還車同點（免異地費）</div></div>
+    <div class="box"><div class="k">🏨 前 2 晚</div><div class="v">ANA InterContinental 萬座<br>（恩納 ・ 度假）</div></div>
+    <div class="box"><div class="k">🏨 後 2 晚</div><div class="v">Hotel Palm Royal 國際通<br>（牧志）</div></div>
+  </div>
+  <div class="info" style="margin-top:12px">
+    <div class="box" style="grid-column:1/-1">
+      <div class="k">🧭 全程節奏</div>
+      <div class="v" style="font-size:14px">
+        Day1 一路由南往北採買＋美國村進飯店 ・ Day2 ANA 全日度假 ・
+        Day3 南下購物換住國際通 ・ Day4 伴手禮＋還車 ・ Day5 輕鬆回台。
+        唯一較長拉車在 Day1、Day3，其餘都短。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 1 -->
+<section id="d1">
+  <div class="day reveal" style="--c:var(--d1)">
+    <img class="banner" src="./img/day1.jpg" alt="">
+    <div class="top">
+      <span class="tag">DAY 1</span>
+      <h3>6/8（一）抵達＋採買＋美國村 → ANA 萬座</h3>
+      <div class="meta"><span>🚗 全程 <b>61.7 km</b></span><span>⏱ 駕車約 <b>1 小時 51 分</b></span><span>一路由南往北</span></div>
+    </div>
+
+    <div class="stop">
+      <div class="h"><span class="time">12:40</span><span class="name">那霸機場 → OTS 宇栄原取車</span><a class="pin" href="https://www.google.com/maps?q=沖縄県那覇市宇栄原3-33-35" target="_blank">📍 地圖</a></div>
+      <div class="desc">入境提領約 1 小時，接駁＋取車手續約 45 分，約 14:30 正式出發。</div>
+      <div class="note">⚠ 3 歲必須兒童安全座椅、6 歲建議增高墊（日本法規），租車務必加租。</div>
+    </div>
+
+    <div class="stop">
+      <div class="h"><span class="time">14:30</span><span class="name">Ashibinaa Outlet ＋ iias 沖繩豐崎</span><a class="pin" href="https://www.google.com/maps?q=沖縄アウトレットモールあしびなー" target="_blank">📍 地圖</a></div>
+      <div class="desc">兩館相鄰、走路可達。Outlet 買精品，iias 補嬰幼用品＋遛娃。</div>
+      <div class="tags">
+        <div class="row"><span class="lab buy">買</span><span class="txt">Outlet：GUCCI／COACH 等精品折扣、ABC-MART 鞋（免稅）</span></div>
+        <div class="row"><span class="lab buy">買</span><span class="txt">iias 3F <b>西松屋</b>：尿布、奶粉、童裝、玩具，便宜齊全</span></div>
+        <div class="row"><span class="lab tip">貼</span><span class="txt">iias 好推車、有 DMM 水族館可遛小孩；停車免費。營業 10:00–21:00</span></div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="h"><span class="time">16:30</span><span class="name">MEGA Donki 宜野灣店</span><a class="pin" href="https://www.google.com/maps?q=MEGAドン・キホーテ宜野湾店" target="_blank">📍 地圖</a></div>
+      <div class="desc">北上順路。郊區大店好停車、比國際通便宜。</div>
+      <div class="tags">
+        <div class="row"><span class="lab buy">買</span><span class="txt">零食、藥妝、伴手禮、美容家電（吹風機）、玩具</span></div>
+        <div class="row"><span class="lab tip">貼</span><span class="txt">免稅 10%＋上網領券最高再 7%；24 小時營業</span></div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="h"><span class="time">17:30</span><span class="name">美國村（北谷 美浜）</span><a class="pin" href="https://www.google.com/maps?q=美浜アメリカンビレッジ" target="_blank">📍 地圖</a></div>
+      <div class="desc">傍晚到最讚：逛街＋Sunset Beach 夕陽（6 月約 19:00）＋晚餐一次收。多數店 11:00 開；停車場多為免費，Depot Island 周邊最好停。</div>
+      <div class="subhd">🛍 必逛</div>
+      <div class="spots">
+        <div class="spot"><div class="si"><b>Depot Island</b><div class="d">海邊開放式購物街區，服飾雜貨選物最集中</div></div><a class="go" href="https://www.google.com/maps?q=デポアイランド" target="_blank">導航</a></div>
+        <div class="spot"><div class="si"><b>American Depot</b><div class="d">紅磚倉庫地標，美式街頭風，拍照熱點</div></div><a class="go" href="https://www.google.com/maps?q=アメリカンデポ" target="_blank">導航</a></div>
+        <div class="spot"><div class="si"><b>Carnival Park Mihama</b><div class="d">50+ 店家＋電影院的商場區</div></div><a class="go" href="https://www.google.com/maps?q=カーニバルパークミハマ" target="_blank">導航</a></div>
+        <div class="spot"><div class="si"><b>Sunset Beach</b><div class="d">美國村旁夕陽名點，傍晚卡位</div></div><a class="go" href="https://www.google.com/maps?q=サンセットビーチ+北谷" target="_blank">導航</a></div>
+        <div class="spot"><div class="si"><b>AEON 北谷店</b><div class="d">大型超市，補貨零食/伴手禮/嬰幼用品</div></div><a class="go" href="https://www.google.com/maps?q=イオン北谷店" target="_blank">導航</a></div>
+      </div>
+      <div class="subhd">🍽 必吃</div>
+      <div class="spots">
+        <div class="spot"><div class="si"><b>琉球之牛 北谷店</b><div class="d">縣產和牛名店，常排隊，建議先訂位</div></div><a class="go" href="https://www.google.com/maps?q=焼肉+琉球の牛+北谷店" target="_blank">導航</a></div>
+        <div class="spot"><div class="si"><b>Seaside Cafe Hanon</b><div class="d">海景露台、人氣鬆餅，避開正午尖峰</div></div><a class="go" href="https://www.google.com/maps?q=シーサイドカフェハノン" target="_blank">導航</a></div>
+        <div class="spot"><div class="si"><b>The Calif Kitchen</b><div class="d">頂樓無敵海景，阿古豬料理、塔可飯</div></div><a class="go" href="https://www.google.com/maps?q=The+Calif+Kitchen+沖縄" target="_blank">導航</a></div>
+        <div class="spot"><div class="si"><b>Taco Rice きじむなぁ</b><div class="d">蛋包塔可飯，口味溫和適合小孩</div></div><a class="go" href="https://www.google.com/maps?q=きじむなぁ+北谷" target="_blank">導航</a></div>
+        <div class="spot"><div class="si"><b>A&amp;W ／ Blue Seal</b><div class="d">麥根沙士續杯、沖繩限定冰淇淋</div></div><a class="go" href="https://www.google.com/maps?q=A%26W+北谷" target="_blank">導航</a></div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="h"><span class="time">20:00</span><span class="name">抵 ANA 萬座入住</span><a class="pin" href="https://www.google.com/maps?q=ANA+InterContinental+Manza+Beach+Resort" target="_blank">📍 地圖</a></div>
+      <div class="desc">代客泊車、行李直送房間，帶孩子孕婦省力。Day1 較累，但換得 Day2 全日度假。</div>
+    </div>
+
+    <a class="maplink" href="https://www.google.com/maps/dir/那覇空港/沖縄アウトレットモールあしびなー/MEGAドン・キホーテ宜野湾店/美浜アメリカンビレッジ/ANA+InterContinental+Manza+Beach+Resort/" target="_blank">🗺 開啟 Day1 路線導航</a>
+  </div>
+</section>
+
+<!-- DAY 2 -->
+<section id="d2">
+  <div class="day reveal" style="--c:var(--d2)">
+    <img class="banner" src="./img/day2.jpg" alt="">
+    <div class="top">
+      <span class="tag">DAY 2</span>
+      <h3>6/9（二）ANA 萬座 度假放空日</h3>
+      <div class="meta"><span>🏖 全日待在飯店</span><span>移動 ≈ 0</span></div>
+    </div>
+    <div class="stop">
+      <div class="h"><span class="name">飯店就是行程</span></div>
+      <div class="desc">充分利用度假飯店，完全不排外出。孕婦休息、小孩玩水。</div>
+      <div class="tags">
+        <div class="row"><span class="lab see">玩</span><span class="txt">私人沙灘＋兩座泳池、夏季海上樂園（充氣滑梯，部分 18 個月以上）</span></div>
+        <div class="row"><span class="lab see">玩</span><span class="txt">縣內最大室內兒童遊樂場（雨天備案）、大浴場／桑拿</span></div>
+        <div class="row"><span class="lab eat">吃</span><span class="txt">自助早餐附兒童遊戲室；館內多間餐廳，不出門也能解決三餐</span></div>
+        <div class="row"><span class="lab tip">貼</span><span class="txt">海上活動有年齡限制，孕婦避開快艇／滑水等劇烈項目</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 3 -->
+<section id="d3">
+  <div class="day reveal" style="--c:var(--d3)">
+    <img class="banner" src="./img/day3.jpg" alt="">
+    <div class="top">
+      <span class="tag">DAY 3</span>
+      <h3>6/10（三）購物爆買日 → 入住國際通</h3>
+      <div class="meta"><span>🚗 全程 <b>49.4 km</b></span><span>⏱ 駕車約 <b>1 小時 25 分</b></span></div>
+    </div>
+
+    <div class="stop">
+      <div class="h"><span class="time">10:15</span><span class="name">ANA 退房南下</span></div>
+      <div class="desc">最晚 10:30 出發，恩納→浦添約 1 小時，才趕得上 11:30 訂位。</div>
+    </div>
+
+    <div class="stop">
+      <div class="h"><span class="time">11:15</span><span class="name">San-A 浦添西海岸 PARCO CITY</span><a class="pin" href="https://www.google.com/maps?q=サンエー浦添西海岸PARCO+CITY" target="_blank">📍 地圖</a></div>
+      <div class="desc">沖繩最大商場、約 250 間店，雨天也舒服。</div>
+      <div class="tags">
+        <div class="row"><span class="lab buy">逛</span><span class="txt">無印（沖繩最大）、LOFT、HANDS、玩具童裝、San-A 食品館（伴手禮）、海景露台</span></div>
+        <div class="row"><span class="lab tip">貼</span><span class="txt">室內遊戲區、哺乳室／尿布台齊全；免費停車約 4,000 台。營業 10:00–22:00</span></div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="h"><span class="time">11:30</span><span class="name">敘敘苑 PARCO CITY 店（3F）★ 已訂位</span><a class="pin" href="https://www.google.com/maps?q=叙々苑+浦添パルコシティ店" target="_blank">📍 地圖</a></div>
+      <div class="desc">高級燒肉，大面落地窗海景。午餐 CP 最高。</div>
+      <div class="tags">
+        <div class="row"><span class="lab eat">點</span><span class="txt">焼肉ランチ ¥3,000、焼肉重 ¥2,800、ミックス ¥4,100；壺漬牛五花、上牛舌、敘敘苑沙拉、石鍋拌飯</span></div>
+        <div class="row"><span class="lab tip">貼</span><span class="txt">午餐不收服務費、全席禁菸、桌席寬適合家庭；想要海景位訂位時備註</span></div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="h"><span class="time">14:00</span><span class="name">港川（離 PARCO 5 分）</span><a class="pin" href="https://www.google.com/maps?q=バースデイ港川店" target="_blank">📍 地圖</a></div>
+      <div class="desc">しまむら集團三店聚集，平價好買。</div>
+      <div class="tags">
+        <div class="row"><span class="lab buy">買</span><span class="txt"><b>Birthday</b>：童裝、嬰幼用品、離乳食、媽媽用品（最該逛）；しまむら 平價服飾家居；Avail 潮流</span></div>
+        <div class="row"><span class="lab tip">貼</span><span class="txt">好推車、CP 高，比台灣便宜。營業 10:00–20:00</span></div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="h"><span class="time">15:30</span><span class="name">Yamada Denki 新都心</span><a class="pin" href="https://www.google.com/maps?q=ヤマダ電機LABI那覇" target="_blank">📍 地圖</a></div>
+      <div class="tags">
+        <div class="row"><span class="lab buy">買</span><span class="txt">美容家電（吹風機）、電鍋、相機、耳機</span></div>
+        <div class="row"><span class="lab tip">貼</span><span class="txt">退稅同店同日滿 ¥5,000、帶護照；大型家電 100V 注意，可宅配機場。營業 10:00–22:00</span></div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="h"><span class="time">17:00</span><span class="name">入住 Palm Royal 國際通（行李定位）</span><a class="pin" href="https://www.google.com/maps?q=ホテルパームロイヤルNAHA国際通り" target="_blank">📍 地圖</a></div>
+      <div class="desc">Day4 整天行李都在這，輕裝出門。</div>
+    </div>
+
+    <a class="maplink" href="https://www.google.com/maps/dir/ANA+InterContinental+Manza+Beach+Resort/サンエー浦添西海岸PARCO+CITY/ヤマダデンキテックランド那覇本店/ホテルパームロイヤルNAHA国際通り/" target="_blank">🗺 開啟 Day3 路線導航</a>
+  </div>
+</section>
+
+<!-- DAY 4 -->
+<section id="d4">
+  <div class="day reveal" style="--c:var(--d4)">
+    <img class="banner" src="./img/day4.jpg" alt="">
+    <div class="top">
+      <span class="tag">DAY 4</span>
+      <h3>6/11（四）伴手禮＋還車日（輕裝）</h3>
+      <div class="meta"><span>🚗 全程 <b>18.5 km</b></span><span>⏱ 駕車約 <b>40 分</b></span></div>
+    </div>
+
+    <div class="stop">
+      <div class="h"><span class="time">上午</span><span class="name">泊港魚市場（泊いゆまち）</span><a class="pin" href="https://www.google.com/maps?q=泊いゆまち" target="_blank">📍 地圖</a></div>
+      <div class="desc">海鮮早午餐，上午去最新鮮。營業 6:00–18:00。</div>
+      <div class="tags">
+        <div class="row"><span class="lab eat">吃</span><span class="txt">黑鮪魚現切、生魚片握壽司、海膽、甜蝦、海鮮丼，現場有烤物攤</span></div>
+        <div class="row"><span class="lab tip">貼</span><span class="txt">站食為主、座位少、推車不便，輪流抱小孩；不吃生食有烤物／丼飯</span></div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="h"><span class="time">11:00</span><span class="name">沖繩媳婦（曙町・伴手禮）</span><a class="pin" href="https://www.google.com/maps?q=沖縄県那覇市曙1-4-8" target="_blank">📍 地圖</a></div>
+      <div class="desc">台灣人經營、中文溝通無障礙的選物店。</div>
+      <div class="tags">
+        <div class="row"><span class="lab buy">買</span><span class="txt">精選沖繩零食、限定泡麵、福袋限定組合</span></div>
+      </div>
+      <div class="note">⚠ 週四 10:30–14:30 ・ <b>只收現金</b> ・ 約 15:00 就拉鐵門 → 務必早點到！</div>
+    </div>
+
+    <div class="stop">
+      <div class="h"><span class="time">中午後</span><span class="name">瀨長島 Umikaji Terrace</span><a class="pin" href="https://www.google.com/maps?q=瀬長島ウミカジテラス" target="_blank">📍 地圖</a></div>
+      <div class="desc">最晚 15:30 離開，才趕得上 17:00 前還車。</div>
+      <div class="tags">
+        <div class="row"><span class="lab see">看</span><span class="txt">白色地中海建築「小希臘」、看飛機低空起降、海景夕陽</span></div>
+        <div class="row"><span class="lab eat">吃</span><span class="txt">幸福鬆餅（No.32 舒芙蕾）、父親的鮪魚（No.14）、氾濫漢堡</span></div>
+        <div class="row"><span class="lab tip">貼</span><span class="txt">階梯坡地、部分路段推車需抱抬；免費停車</span></div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="h"><span class="time">16:00</span><span class="name">先回國際通飯店（全員下車、放戰利品）</span></div>
+      <div class="desc">孕婦小孩先回飯店休息，不用一起去還車。</div>
+    </div>
+
+    <div class="stop">
+      <div class="h"><span class="time">16:30</span><span class="name">開車的人單獨去宇栄原 OTS 還車</span><a class="pin" href="https://www.google.com/maps?q=沖縄県那覇市宇栄原3-33-35" target="_blank">📍 地圖</a></div>
+      <div class="desc">還完搭計程車或單軌（赤嶺／小祿站→牧志站）回飯店。</div>
+      <div class="note">⚠ 還車務必 17:00 前完成。Day5 完全不用碰車。</div>
+    </div>
+
+    <div class="stop">
+      <div class="h"><span class="time">傍晚</span><span class="name">步行逛國際通＋晚餐</span><a class="pin" href="https://www.google.com/maps?q=国際通り+那覇" target="_blank">📍 地圖</a></div>
+      <div class="desc">飯店就在國際通上，走路即可逛街、覓食、最後補貨。假日傍晚人潮多，孕婦避開尖峰；停唐吉訶德或周邊收費停車場。</div>
+      <div class="subhd">🛍 必逛</div>
+      <div class="spots">
+        <div class="spot"><div class="si"><b>唐吉訶德 國際通店</b><div class="d">藥妝/零食/伴手禮一站購足，可退稅</div></div><a class="go" href="https://www.google.com/maps?q=ドン・キホーテ国際通り店" target="_blank">導航</a></div>
+        <div class="spot"><div class="si"><b>第一牧志公設市場</b><div class="d">在地海鮮市場，2F 可代客料理（人多走道窄）</div></div><a class="go" href="https://www.google.com/maps?q=第一牧志公設市場" target="_blank">導航</a></div>
+        <div class="spot"><div class="si"><b>御菓子御殿 松尾店</b><div class="d">紅芋塔名店，伴手禮首選</div></div><a class="go" href="https://www.google.com/maps?q=御菓子御殿+国際通り松尾店" target="_blank">導航</a></div>
+        <div class="spot"><div class="si"><b>わしたショップ 本店</b><div class="d">縣物產直營，食品泡盛伴手禮最齊</div></div><a class="go" href="https://www.google.com/maps?q=わしたショップ国際通り本店" target="_blank">導航</a></div>
+        <div class="spot"><div class="si"><b>塩屋（鹽專賣）</b><div class="d">日本最大鹽店，雪鹽金楚糕、風味鹽</div></div><a class="go" href="https://www.google.com/maps?q=塩屋+国際通り店" target="_blank">導航</a></div>
+        <div class="spot"><div class="si"><b>平和通／市場本通</b><div class="d">有頂棚傳統商店街，下雨也能逛</div></div><a class="go" href="https://www.google.com/maps?q=平和通り+那覇" target="_blank">導航</a></div>
+      </div>
+      <div class="subhd">🍽 必吃</div>
+      <div class="spots">
+        <div class="spot"><div class="si"><b>通堂拉麵</b><div class="d">濃郁豚骨「男人麵」、清爽鹽味「女人麵」</div></div><a class="go" href="https://www.google.com/maps?q=通堂+那覇" target="_blank">導航</a></div>
+        <div class="spot"><div class="si"><b>牛排屋 88 國際通店</b><div class="d">沖繩牛排老字號，石垣牛／和牛，可預約</div></div><a class="go" href="https://www.google.com/maps?q=ステーキハウス88+国際通り店" target="_blank">導航</a></div>
+        <div class="spot"><div class="si"><b>富士家 善哉剉冰</b><div class="d">沖繩黑糖剉冰，有尿布室／停車（親子友善）</div></div><a class="go" href="https://www.google.com/maps?q=ぜんざいの富士家+泊本店" target="_blank">導航</a></div>
+        <div class="spot"><div class="si"><b>Blue Seal 牧志店</b><div class="d">沖繩代表冰淇淋，邊走邊吃</div></div><a class="go" href="https://www.google.com/maps?q=ブルーシール+国際通り牧志店" target="_blank">導航</a></div>
+        <div class="spot"><div class="si"><b>沖繩そば</b><div class="d">Q 彈麵＋豚骨柴魚湯＋滷三層肉</div></div><a class="go" href="https://www.google.com/maps?q=沖縄そば+国際通り" target="_blank">導航</a></div>
+      </div>
+    </div>
+
+    <a class="maplink" href="https://www.google.com/maps/dir/ホテルパームロイヤルNAHA国際通り/泊いゆまち/沖縄県那覇市曙1-4-8/瀬長島ウミカジテラス/沖縄県那覇市宇栄原3-33-35/" target="_blank">🗺 開啟 Day4 路線導航</a>
+  </div>
+</section>
+
+<!-- DAY 5 -->
+<section id="d5">
+  <div class="day reveal" style="--c:var(--d5)">
+    <img class="banner" src="./img/day5.jpg" alt="">
+    <div class="top">
+      <span class="tag">DAY 5</span>
+      <h3>6/12（五）回台</h3>
+      <div class="meta"><span>✈ 08:30 那霸起飛</span></div>
+    </div>
+    <div class="stop">
+      <div class="h"><span class="name">輕鬆去機場</span><a class="pin" href="https://www.google.com/maps?q=那覇空港" target="_blank">📍 地圖</a></div>
+      <div class="desc">前一晚已還車，當天不用開車。</div>
+      <div class="tags">
+        <div class="row"><span class="lab tip">交通</span><span class="txt">計程車約 15 分；或單軌牧志站 → 那霸空港站</span></div>
+        <div class="row"><span class="lab tip">提醒</span><span class="txt">國際線建議 06:00–06:30 抵達機場，預留報到與安檢</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 必買 -->
+<section id="buy">
+  <div class="sechead"><div class="bar"></div><h2>必買清單</h2></div>
+  <p class="lead">分類整理，採購集中在 Day1（Donki／iias）與 Day3（PARCO／港川／Yamada）。</p>
+
+  <div class="cat reveal"><h4>🍬 伴手禮・零食</h4><div class="chips">
+    <span>御菓子御殿 紅芋塔</span><span>雪鹽夾心餅</span><span>南風堂 雪鹽金楚糕</span><span>金楚糕 ちんすこう</span>
+    <span>鹽屋 雪鹽棉花餅</span><span>香檬洋芋片</span><span>ALFORT 沖繩限定紫薯</span><span>GODIVA 沖繩限定</span>
+    <span>沖繩黑糖</span><span>宮古島雪鹽</span><span>石垣島辣油</span><span>Orion 啤酒</span>
+  </div></div>
+
+  <div class="cat reveal"><h4>👶 嬰幼兒・童裝</h4><div class="chips">
+    <span>iias 西松屋：尿布／奶粉／童裝／玩具</span><span>港川 Birthday：童裝／離乳食／媽媽用品</span>
+    <span>しまむら：平價服飾家居</span><span>Avail：潮流配件</span>
+  </div></div>
+
+  <div class="cat reveal"><h4>🔌 電器・家電</h4><div class="chips">
+    <span>吹風機・美容家電</span><span>電鍋（注意 100V）</span><span>相機・鏡頭・耳機</span>
+    <span>Yamada 新都心</span><span>Donki 宜野灣</span><span>退稅滿 ¥5,000＋護照</span>
+  </div></div>
+
+  <div class="cat reveal"><h4>🛒 採買點</h4><div class="chips">
+    <span>Donki 宜野灣（零食藥妝）</span><span>PARCO San-A 食品館</span><span>iias / Ashibinaa</span><span>國際通・機場（最齊全）</span>
+  </div></div>
+</section>
+
+<!-- 注意事項 -->
+<section id="tips">
+  <div class="sechead"><div class="bar"></div><h2>注意事項</h2></div>
+  <div class="warns">
+    <div class="wcard red reveal"><h4>🚗 自駕（最重要）</h4><ul>
+      <li><b>兒童安全座椅</b>：日本法規未滿 6 歲強制。3 歲必用座椅、6 歲建議增高墊，租車要加租。</li>
+      <li>靠左行駛、右駕；雨刷與方向燈位置與台灣相反，初上路放慢。</li>
+      <li>自助加油（セルフ）、<b>滿油還車</b>保留收據；ETC 卡可一起租。</li>
+      <li>備台灣駕照 ＋ <b>日文譯本</b>（非國際駕照）。停車多為計時鎖板，景點停好再付。</li>
+    </ul></div>
+
+    <div class="wcard red reveal"><h4>🔑 還車（Day4）</h4><ul>
+      <li>取／還車同在 <b>OTS 宇栄原</b>，免異地還車費。</li>
+      <li>務必 <b>17:00 前</b>還車；先送孕婦小孩回飯店，開車的人單獨去還。</li>
+    </ul></div>
+
+    <div class="wcard reveal"><h4>💴 付款・現金</h4><ul>
+      <li><b>沖繩媳婦只收現金</b>，且週四約 15:00 拉鐵門，請上午早點到。</li>
+      <li>多備現金；魚市場、小店常不收卡。</li>
+    </ul></div>
+
+    <div class="wcard reveal"><h4>🤰 孕婦・親子節奏</h4><ul>
+      <li>避免長時間站立／走坡（魚市場站食、瀨長島階梯），多安排休息點。</li>
+      <li>節奏：上午一個重點 ＋ 午後休息 ＋ 傍晚再出門；帶輕量好收推車。</li>
+      <li>孕婦避開劇烈海上活動；隨身母嬰用品與電解質飲品。</li>
+    </ul></div>
+
+    <div class="wcard reveal"><h4>🌦 6 月天氣</h4><ul>
+      <li>梅雨末段，常陰雨、午後陣雨；均溫約 28°C、濕熱，UV 高。</li>
+      <li>雨天備案：PARCO CITY、iias、DMM 水族館、ANA 室內設施。</li>
+      <li>備輕便雨衣＋折傘、防曬乳、帽子、薄外套；勤補水防中暑。</li>
+    </ul></div>
+
+    <div class="wcard reveal"><h4>🚝 市區交通</h4><ul>
+      <li>那霸市區可搭單軌電車（Yui-Rail），避開塞車與停車，適合帶孕婦小孩短程。</li>
+    </ul></div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  沖繩親子自駕 5天4夜 ・ 2026/6/8–6/12<br>
+  距離為 Google 地圖實測駕車里程，不含停留與路況浮動。<br>
+  店家營業時間／價格可能變動，出發前請再確認官方公告。
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
